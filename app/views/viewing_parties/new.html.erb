@@ -5,6 +5,7 @@
 <%= f.number_field :duration, value: @movie.runtime %><br>
 <%= f.label :day %>
 <%= f.date_select :day, value: Date.today %><br>
-<%= f.label :view_time, value: Time.now  %>
-<%= f.time_select :view_time %>
+<%= f.label :view_time %>
+<%= f.time_select :view_time, value: Time.now %><br><br>
+<%= f.submit "Create Viewing Party" %>
 <% end %>
