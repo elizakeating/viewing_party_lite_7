@@ -1,10 +1,39 @@
-<h2><%= @user.name %>'s Dashboard</h2>
+<center><h2><%= @user.name %>'s Dashboard</h2></center>
 
-<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<center><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></center>
+<br>
+<br>
+<br>
 
-<section id="viewing_parties">
-  <% @user.viewing_parties.each do |party| %>
-    <p><%= party.day %></p>
-    <p><%= party.view_time %></p>
-  <% end %>
-</section>
+<div class="party-container" style="display: flex; justify-content: space-between;">
+
+  <section id="hosting_parties" style="flex: 1; margin-right: 20px;">
+    <center><h3>Parties I am Hosting</h3><center>
+    <% @user.parties_i_am_hosting.each do |party| %>
+    <section id= "party-<%=party.id%>">
+      <strong><p>Movie Title: <%= link_to "#{party.movie_title}", movie_show_path(@user.id, party.movie.id) %></strong>
+      <p><%= image_tag party.movie_image %>
+      <p>Date: <%= party.day %></p>
+      <p>View Time: <%= party.view_time %></p>
+      <p>Host: <%= party.host.name%></p>
+      <p>Guests: <%= party.party_guests.map {|guest| guest.name}.sort.join(", ") %></p>
+    </section>
+    <% end %>
+  </section> 
+
+  <section id="invited_parties" style="flex: 1;">
+    <center><h3>Parties I am invited to</h3><center>
+    <% @user.parties_i_am_invited_to.each do |party| %>
+    <section id= "party-<%=party.id%>">
+      <strong><p>Movie Title: <%= link_to "#{party.movie_title}", movie_show_path(@user.id, party.movie.id) %></strong>
+      <p><%= image_tag party.movie_image %>
+      <p>Date: <%= party.day %></p>
+      <p>View Time: <%= party.view_time %></p>
+      <p>Host: <%= party.host.name%></p>
+      <p>Guests: <%= party.party_guests.map {|guest| guest.name == @user.name ? "<strong>#{guest.name}</strong>" : guest.name}.sort.join(", ").html_safe %></p>
+    </section>
+    <% end %>
+  </section>
+
+</div>
+
