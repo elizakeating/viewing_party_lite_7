@@ -22,6 +22,7 @@ class MoviesController < ApplicationController
   
   def show
     @movie = facade.movie
+    # require 'pry';binding.pry
     @cast_members = facade.cast_members
     @reviews = facade.reviews
   end
