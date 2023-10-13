@@ -10,8 +10,9 @@ User.destroy_all
 
 noelle = User.create!(name: "Noelle", email: "Queen@aol.com")
 chris = User.create!(name: "Chris", email: "muttonchops@yahoo.com")
+antoine = User.create!(name: "Antoine", email: "antoine@gmail.com")
+lauren = User.create!(name: "Lauren", email: "lauren@gmial.com")
+# viewing_party_1 = ViewingParty.create!(duration: 120, day: "2021-08-01", view_time: "2021-08-01 19:00:00 UTC")
 
-viewing_party_1 = ViewingParty.create!(duration: 120, day: "2021-08-01", view_time: "2021-08-01 19:00:00 UTC")
-
-user_viewing_partie_1 = UserViewingParty.create!(user_id: noelle.id, viewing_party_id: viewing_party_1.id)
-user_id_2 = UserViewingParty.create!(user_id: chris.id, viewing_party_id: viewing_party_1.id)
+# user_viewing_partie_1 = UserViewingParty.create!(user_id: noelle.id, viewing_party_id: viewing_party_1.id)
+# user_id_2 = UserViewingParty.create!(user_id: chris.id, viewing_party_id: viewing_party_1.id)
