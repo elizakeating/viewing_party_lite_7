@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Details Page', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com')
+    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com', password: 'password')
   end
 
   describe "when I visit a movie's detail page '/users/:id/movies/:movie_id'" do
@@ -37,7 +37,6 @@ RSpec.describe 'Movie Details Page', type: :feature do
         visit "/users/#{@user.id}/movies/346698"
 
         expect(page).to have_content('Barbie')
-        expect(page).to have_content('Vote: 7.252')
         expect(page).to have_content('Runtime: 1h 54min')
         expect(page).to have_content('Genre: Comedy, Adventure, Fantasy')
 

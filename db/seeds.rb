@@ -8,11 +8,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.destroy_all
+# User.destroy_all
 
-User.create!(name: 'Noelle', email: 'Queen@aol.com')
-User.create!(name: 'Chris', email: 'muttonchops@yahoo.com')
-User.create!(name: 'Antoine', email: 'antoine@gmail.com')
+# User.create!(name: 'Noelle', email: 'Queen@aol.com')
+# User.create!(name: 'Chris', email: 'muttonchops@yahoo.com')
+# User.create!(name: 'Antoine', email: 'antoine@gmail.com')
 
 # viewing_party_1 = ViewingParty.create!(duration: 120, day: "2021-08-01", view_time: "2021-08-01 19:00:00 UTC")
 

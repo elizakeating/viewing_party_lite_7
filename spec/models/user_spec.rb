@@ -14,10 +14,10 @@ RSpec.describe User, type: :model do
   end
 
   before :each do
-    @noelle = User.create!(name: 'Noelle', email: 'Queen@aol.com', id: 1)
-    @chris = User.create!(name: 'Chris', email: 'muttonchops@yahoo.com', id: 2)
-    @antoine = User.create!(name: 'Antoine', email: 'antoine@gmail.com', id: 3)
-    @lauren = User.create!(name: 'Lauren', email: 'lauren@gmial.com', id: 4)
+    @noelle = User.create!(name: 'Noelle', email: 'Queen@aol.com', id: 1, password: 'password')
+    @chris = User.create!(name: 'Chris', email: 'muttonchops@yahoo.com', id: 2, password: 'password')
+    @antoine = User.create!(name: 'Antoine', email: 'antoine@gmail.com', id: 3, password: 'password')
+    @lauren = User.create!(name: 'Lauren', email: 'lauren@gmial.com', id: 4, password: 'password')
     @viewing_party_1 = ViewingParty.create!(duration: 240, day: '2021-08-01', view_time: '2021-08-01 19:00:00 UTC',
                                             movie_id: 550)
     @viewing_party_2 = ViewingParty.create!(duration: 240, day: '2021-08-01', view_time: '2021-08-01 19:00:00 UTC',

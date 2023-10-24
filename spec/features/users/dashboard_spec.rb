@@ -4,10 +4,10 @@ require 'rails_helper'
 
 RSpec.describe 'User Dashboard Page', type: :feature do
   before(:each) do
-    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com')
-    @user_2 = User.create(name: 'Noelle', email: 'loml@gmail.com')
-    @user_3 = User.create(name: 'Antoine', email: 'antoine@gmail.com')
-    @user_4 = User.create(name: 'Eliza', email: 'eliza@gmail.com')
+    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com', password: 'password')
+    @user_2 = User.create(name: 'Noelle', email: 'loml@gmail.com', password: 'password')
+    @user_3 = User.create(name: 'Antoine', email: 'antoine@gmail.com', password: 'password')
+    @user_4 = User.create(name: 'Eliza', email: 'eliza@gmail.com', password: 'password')
 
     visit "/users/#{@user.id}/movies/346698/viewing_party/new"
 

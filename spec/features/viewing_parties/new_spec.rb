@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page' do
   before(:each) do
-    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com')
-    @user_2 = User.create(name: 'Noelle', email: 'loml@gmail.com')
-    @user_3 = User.create(name: 'Antoine', email: 'antoine@gmail.com')
+    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com', password: 'password')
+    @user_2 = User.create(name: 'Noelle', email: 'loml@gmail.com', password: 'password')
+    @user_3 = User.create(name: 'Antoine', email: 'antoine@gmail.com', password: 'password')
   end
 
   describe "when I visit the new viewing party page '/users/:id/movies/:movie_id/viewing_party/new'" do

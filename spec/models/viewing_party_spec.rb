@@ -16,9 +16,9 @@ RSpec.describe ViewingParty, type: :model do
   end
 
   before(:each) do
-    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com')
-    @user_2 = User.create(name: 'Noelle', email: 'loml@gmail.com')
-    @user_3 = User.create(name: 'Antoine', email: 'antoine@gmail.com')
+    @user = User.create(name: 'Brad', email: 'bradsmith@gmail.com', password: 'password')
+    @user_2 = User.create(name: 'Noelle', email: 'loml@gmail.com', password: 'password')
+    @user_3 = User.create(name: 'Antoine', email: 'antoine@gmail.com', password: 'password')
     @viewing_party = ViewingParty.new(duration: '150', day: '2023-12-15', view_time: '19:00', movie_id: 346_698)
     UserViewingParty.create(user: @user, viewing_party: @viewing_party, host: true)
     UserViewingParty.create(user: @user_2, viewing_party: @viewing_party, host: false)

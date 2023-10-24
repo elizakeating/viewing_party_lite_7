@@ -1,5 +1,11 @@
 <br><center><%= button_to "Create New User", "/register/new", method: :get%>
 
+<% if current_user %>
+  <p> currently logged in as <%= current_user.email %> </p>
+<% end %>
+
+<%= link_to "Log In", login_form_path %>
+
 <% @users.each do |user| %>
   <p><%= link_to user.name, "/users/#{user.id}" %></p>
 <%end %>
