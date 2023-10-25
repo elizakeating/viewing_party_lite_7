@@ -2,7 +2,9 @@
 
 <% if current_user %>
   <p> currently logged in as <%= current_user.email %> </p>
+  <%= link_to "Log out", logout_path %>
 <% end %>
+<br>
 
 <%= link_to "Log In", login_form_path %>
 

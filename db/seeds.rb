@@ -17,11 +17,10 @@
 # viewing_party_1 = ViewingParty.create!(duration: 120, day: "2021-08-01", view_time: "2021-08-01 19:00:00 UTC")
 
 # user_viewing_partie_1 = UserViewingParty.create!(user_id: noelle.id, viewing_party_id: viewing_party_1.id)
-# user_id_2 = UserViewingParty.create!(user_id: chris.id, viewing_party_id: viewing_party_1.id)
-admin_user = User.create(name:"AdminGuy", email: "admin@admin.com", password: "password", role: 2)
-i = 1
 
-20.times do 
-    Movie.create(title: "Movie #{i} Title", rating: rand(1..10), description: "This is a description about Movie #{i}")
-    i+=1
-end 
+# user_id_2 = UserViewingParty.create!(user_id: chris.id, viewing_party_id: viewing_party_1.id)
+
+admin_user = User.create(name:"AdminGuy", email: "admin@admin.com", password: "password", role: 2)
+admin_user = User.create(name:"Default guy", email: "default@admin.com", password: "password", role: 0)
+admin_user = User.create(name:"Guy", email: "phil@admin.com", password: "password", role: 0)
+admin_user = User.create(name:"Another Guy", email: "jeff@admin.com", password: "password", role: 0)

@@ -38,4 +38,22 @@ RSpec.describe 'Login Page' do
       expect(page).to have_content("currently logged in as #{user.email}")
     end
   end
+
+  it "has a link that you can log out and it ends your session" do 
+    user  = User.create(name: "Antoine", email: "antoine@gmail.com", password: "password")
+    visit login_form_path
+
+    fill_in :email, with: 'antoine@gmail.com'
+    fill_in :password, with: 'password'
+    click_button "Log In"
+
+    visit root_path
+
+    expect(page).to have_link("Log out")
+    click_link("Log out")
+
+    expect(current_path).to eq(root_path)
+    expect(page).to_not have_link("Log out")
+    expect(page).to have_link("Log In")
+  end
 end
