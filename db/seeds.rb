@@ -18,3 +18,10 @@
 
 # user_viewing_partie_1 = UserViewingParty.create!(user_id: noelle.id, viewing_party_id: viewing_party_1.id)
 # user_id_2 = UserViewingParty.create!(user_id: chris.id, viewing_party_id: viewing_party_1.id)
+admin_user = User.create(name:"AdminGuy", email: "admin@admin.com", password: "password", role: 2)
+i = 1
+
+20.times do 
+    Movie.create(title: "Movie #{i} Title", rating: rand(1..10), description: "This is a description about Movie #{i}")
+    i+=1
+end 

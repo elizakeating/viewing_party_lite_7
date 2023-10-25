@@ -9,6 +9,8 @@ class User < ApplicationRecord
   validates_presence_of :password
   has_secure_password
 
+  enum role: %w[default manager admin]
+
   def parties_i_am_hosting
     viewing_parties.joins(:user_viewing_parties)
                    .where('user_viewing_parties.host = ? AND user_viewing_parties.user_id = ?', true, id)
